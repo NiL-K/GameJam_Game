@@ -66,6 +66,10 @@ public class Player_Controller : MonoBehaviour
         {
             interactAim = other.gameObject;
         }
+        if (other.CompareTag("gate"))
+        {
+            gateAim = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
