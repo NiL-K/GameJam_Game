@@ -32,8 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = normal_speed;
         }
-        Player_Body.transform.localScale = new Vector3(Player_Body.transform.localScale.x * 1, Player_Body.transform.localScale.y * 1, Player_Body.transform.localScale.z * 1);
-        Player_Body.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, Player_Body.velocity.y, Input.GetAxis("Vertical") * speed);
+        Player_Body.velocity = new Vector3(0/*Input.GetAxis("Horizontal") * speed*/, Player_Body.velocity.y, Input.GetAxis("Vertical") * speed);
     }
 
 

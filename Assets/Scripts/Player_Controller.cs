@@ -79,22 +79,8 @@ public class Player_Controller : MonoBehaviour
             interactAim.transform.position = GameObject.Find("Grabb_zone").transform.position;
     }
 
-    //comment 2
-
-    private void DropObj()
-    {
-        if (Input.GetKeyDown(KeyCode.F) && grabbed == true)
-        {
-            interactAim.GetComponent<Rigidbody>().useGravity = true;
-            interactAim.transform.position = GameObject.Find("Grabb_zone").transform.position;
-            GetComponentInChildren<SphereCollider>().enabled = true;
-            grabbed = !grabbed;
-            Debug.Log("Dropped!");
-        }
-    }
 }
     
 
-//comment
 
 
