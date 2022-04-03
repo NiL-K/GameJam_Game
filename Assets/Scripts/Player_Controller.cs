@@ -37,14 +37,13 @@ public class Player_Controller : MonoBehaviour
             interactAim = null;
     }
 
-    private void InteractWithSmth() //Вставить в update
+    private void InteractWithSmth() 
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (interactAim != null)
             {
                 Debug.Log(interactAim.name);
-                
             }
         }
 
