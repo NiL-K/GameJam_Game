@@ -21,7 +21,7 @@ public class Player_Controller : MonoBehaviour
         InteractWithSmth();
         GrabObj();
         DragObj();
-        DropObj();
+    //    DropObj();
     }
 
     public float speed = 5, Jump_Power = 500, slow_speed = 2;
@@ -99,11 +99,21 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && interactAim != null && grabbed == false)
         {
             interactAim.GetComponent<Rigidbody>().useGravity = false;
+            interactAim.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             interactAim.transform.position = GameObject.Find("Grabb_zone").transform.position;
             GetComponentInChildren<SphereCollider>().enabled = false;
             grabbed = !grabbed;
             Debug.Log("Grabbed!");
         }
+        else if (Input.GetKeyDown(KeyCode.E) && grabbed == true)
+            {
+                interactAim.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                interactAim.GetComponent<Rigidbody>().useGravity = true;
+                interactAim.transform.position = GameObject.Find("Grabb_zone").transform.position;
+                GetComponentInChildren<SphereCollider>().enabled = true;
+                grabbed = !grabbed;
+                Debug.Log("Dropped!");
+            }
     }
     private void DragObj()
     {
