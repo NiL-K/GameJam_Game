@@ -111,6 +111,8 @@ public class Player_Controller : MonoBehaviour
             interactAim.transform.position = GameObject.Find("Grabb_zone").transform.position;
     }
 
+    //comment 2
+
     private void DropObj()
     {
         if (Input.GetKeyDown(KeyCode.F) && grabbed == true)
@@ -124,5 +126,7 @@ public class Player_Controller : MonoBehaviour
     }
 }
     
+
+//comment
 
 
