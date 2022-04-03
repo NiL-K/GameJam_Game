@@ -65,6 +65,7 @@ public class Player_Controller : MonoBehaviour
         if (other.CompareTag("interactive"))
         {
             interactAim = other.gameObject;
+            interactAim.GetComponent<Outline>().enabled = true;
         }
         if (other.CompareTag("gate"))
         {
@@ -75,7 +76,10 @@ public class Player_Controller : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == interactAim)
+        {
+            interactAim.GetComponent<Outline>().enabled = false;
             interactAim = null;
+        }
     }
 
     private void InteractWithSmth() //Вставить в update
